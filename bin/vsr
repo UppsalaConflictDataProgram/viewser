@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+"""
+CLI entrypoint for the viewser package
+"""
+from fire import Fire
+from viewser.config import CONFIG
+from viewser.api_requests import request
+
+def config():
+    """
+    Prints the config
+    """
+    return str(CONFIG)
+
+def get(path:str):
+    """
+    Make an API request
+    """
+    return request(path=path,method="GET")
+
+if __name__=="__main__":
+    Fire()
